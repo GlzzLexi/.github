@@ -8,7 +8,7 @@
   [![Status](https://img.shields.io/badge/Status-Active_Development-success.svg)](#)
   [![Platform](https://img.shields.io/badge/Platform-Roblox-00A2FF.svg)](https://create.roblox.com/)
   [![Language](https://img.shields.io/badge/Language-Luau-000000.svg)](https://luau.org/)
-  [![License](https://img.shields.io/badge/Open_Source-MIT-blue.svg)](#open-source)
+  [![License](https://img.shields.io/badge/Open_Source-MIT-blue.svg)](https://github.com/GlzzLexi/studious-spoon/blob/main/LICENSE)
 </div>
 
 ---
