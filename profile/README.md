@@ -1,85 +1,72 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/logo.png" alt="GlzzLexi Studios Logo" width="140" />
+  <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/logo.png" alt="GlzzLexi Studios" width="120" />
 
   # GlzzLexi Studios
 
-  **Independent Roblox Development Studio & Systems Architecture**  
-  *Building versatile game experiences through modular systems and transparent engineering.*
-
-  ---
+  Independent Roblox studio specializing in modular Luau systems and incremental game releases.
 
   [![Status](https://img.shields.io/badge/Status-Active_Development-success.svg)](#)
   [![Platform](https://img.shields.io/badge/Platform-Roblox-00A2FF.svg)](https://create.roblox.com/)
-  [![Language](https://img.shields.io/badge/Stack-Luau-000000.svg)](https://luau.org/)
+  [![Language](https://img.shields.io/badge/Language-Luau-000000.svg)](https://luau.org/)
+  [![License](https://img.shields.io/badge/Open_Source-MIT-blue.svg)](#open-source)
 </div>
 
 ---
 
-## 👑 Leadership & Genesis
+## About
 
-GlzzLexi Studios was founded and is independently directed by **Gabriel Ronao**. What began as a dedicated pursuit of modular Luau systems, custom engine tooling, and backend mechanics has evolved into an ambitious game production studio.
+GlzzLexi Studios is an independent game studio founded and led by **Gabriel Ronao**. The studio develops Roblox experiences on a shared foundation of reusable Luau modules covering data persistence, gameplay systems, and development tooling.
 
-While currently driven as a solo-founded studio, the long-term blueprint centers on scaling into a collaborative team of passionate game developers, technical artists, and scripters committed to shipping distinct experiences.
+The studio is currently solo-operated. Its stated objective is to grow into a small, specialized team of developers, technical artists, and scripters.
 
----
+## Games
 
-## 🎯 Our Vision
+Our first titles are in planning. Announcements and development logs will be published here as each project enters production.
 
-We reject creative stagnation. GlzzLexi is built to explore the full spectrum of gameplay genres across the Roblox metaverse:
-
-* **Action & Precision:** Competitive First-Person Shooters (FPS) and tactical combat systems.
-* **Atmosphere & Endurance:** Harsh survival sims with resource gathering, crafting, and dynamic environments.
-* **Platforming & Movement:** Fast-paced obstacle courses (Obbies), speed-runs, and physics-driven platformers.
-* **Systems-Driven RPGs:** Economy loops, progression trees, and social hub games.
-
-Our overarching vision is to scale from an agile independent creator into a multi-title studio powered by a high-caliber team of contributors.
-
----
-
-## 🚀 The Mission: Tactical Delivery Over Premature Perfection
-
-Delivering massive, AAA-fidelity titles in single monolithic releases creates severe development bottlenecks and delays—especially when balancing time constraints and solo technical execution. 
-
-To ensure continuous delivery and protect project momentum, our strategic roadmap focuses on **wrapper games, streamlined mechanics, and incremental releases**:
-
-1. **Lightweight & Focused Releases:** Launching targeted, playable prototypes and modular game types rather than waiting months for a single massive title.
-2. **Reputation & Feedback Loops:** Building real player traction, refining networking pipelines, and collecting player telemetry early.
-3. **Foundation for Scale:** Every game module authored for a lightweight release directly feeds into our production engine (`studious-spoon`) for future large-scale projects.
-
----
-
-## 🎨 Adaptive Aesthetics & Interface Philosophy
-
-User experience at GlzzLexi is fluid. We do not lock ourselves into a single repetitive visual brand across titles.
-
-* **Dynamic Thematic Shifting:** UI design, spatial audio, and camera perspective dynamically adapt to the genre.
-  * *FPS titles* leverage minimal, diegetic HUDs with tactical telemetry and responsive hit markers.
-  * *Survival titles* utilize raw, skeuomorphic inventory layouts with high environmental readability.
-  * *Platformers/Obbies* emphasize vibrant, immediate feedback, high-contrast timers, and fluid micro-animations.
-* **Cross-Title Polish:** Regardless of genre, every interface shares snappy responsiveness, mobile-to-desktop scaling, and zero visual bloat.
-
----
-
-## 📡 Transparency & Project Logs
-
-We believe in building in public. GlzzLexi tracks game development cycles through structured **Project Logs** to document what we are building, when it ships, and how it works under the hood.
-
-Visibility into our titles operates across two deliberate tiers:
-
-| Tier | Target Audience | What is Shared |
+| Genre | Description | Status |
 | :--- | :--- | :--- |
-| 🌐 **Public Projects** | Community & Devs | **Full Transparency:** Step-by-step dev logs, architectural breakdowns, system frameworks, and open-source starter modules. |
-| 🔒 **Private / Staged** | Early Testers & Community | **High-Level Scope:** Game premise, high-level core loop, target mechanics, and release milestones—keeping core assets protected until launch. |
+| Action | First-person shooters and tactical combat | Planned |
+| Survival | Resource gathering, crafting, and dynamic environments | Planned |
+| Platforming | Obstacle courses, speed-runs, and physics-driven movement | Planned |
+| Systems-driven | RPGs, economy loops, progression, and social hubs | Planned |
 
----
+### Development Approach
 
-## 🛠️ Ecosystem Repositories
+We favor small, focused releases over a single large launch. This approach shortens delivery cycles, surfaces player feedback early, and allows each release to strengthen the shared codebase used by later titles.
 
-* [**studious-spoon**](https://github.com/GlzzLexi/studious-spoon) — The core repository of reusable Luau modules, DataStore handlers, and gameplay templates powering our titles.
-* **Project Logs & Frameworks** *(Coming Soon)* — Public devlogs tracking sprint progress, patch notes, and engine experiments.
+## Open Source
+
+Reusable modules are maintained in public and released under the **MIT License**.
+
+| Repository | Description |
+| :--- | :--- |
+| [`studious-spoon`](https://github.com/GlzzLexi/studious-spoon) | Core library of Luau modules, DataStore handlers, and gameplay templates |
+
+Contributions, issues, and feedback are welcome through each repository.
+
+## Roadmap
+
+| Phase | Objective | Status |
+| :--- | :--- | :--- |
+| 1. Foundation | Establish core modules and shared tooling in `studious-spoon` | In progress |
+| 2. First releases | Ship lightweight, playable prototypes and collect player feedback | Planned |
+| 3. Transparency | Publish project logs and architecture write-ups for public projects | Planned |
+| 4. Expansion | Grow the team and begin larger-scale titles | Planned |
+
+Project visibility follows two tiers. Public projects receive full development logs and architecture breakdowns. Staged projects share the premise, core loop, and milestones, with assets kept private until launch.
+
+## Join the Team
+
+We are open to hearing from developers, technical artists, and scripters who are interested in contributing as the studio grows.
+
+To apply, send an email to **[glzzjhn@gmail.com](mailto:glzzjhn@gmail.com)** with the subject line `Application: [Your Role]` and include:
+
+- A brief introduction and your area of expertise
+- Links to a portfolio, GitHub profile, or previous work
+- Your availability
 
 ---
 
 <div align="center">
-  <sub>© 2026 GlzzLexi Studios. Founded by Gabriel Ronao. All rights reserved.</sub>
+  <sub>© 2026 GlzzLexi Studios. Founded by Gabriel Ronao.</sub>
 </div>
