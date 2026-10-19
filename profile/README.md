@@ -51,8 +51,8 @@ Our flagship project in development and a core showcase of the studio's technica
   </a>
 </div>
 
-* **Overview:** Serving as the studio's first official launch, this title was intentionally built with a minimalist, straightforward core loop to validate baseline deployment, tycoon mechanics, and data persistence in a live environment.
-* **Lifecycle Notice:** Paid promotion and feature expansions are under consideration but remain contingent on organic player retention. In alignment with our iterative development philosophy, active support will be sunsetted if the title does not meet internal player-engagement benchmarks over the coming months.
+- **Overview:** Serving as the studio's first official launch, this title was intentionally built with a minimalist, straightforward core loop to validate baseline deployment, tycoon mechanics, and data persistence in a live environment.
+- **Lifecycle Notice:** Paid promotion and feature expansions are under consideration but remain contingent on organic player retention. In alignment with our iterative development philosophy, active support will be sunsetted if the title does not meet internal player-engagement benchmarks over the coming months.
 
 ---
 
@@ -66,7 +66,7 @@ Our flagship project in development and a core showcase of the studio's technica
   <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/ZombieGame.png" alt="Untitled Zombie Roadtrip Game" width="85%" />
 </div>
 
-* **Overview:** A survival-focused roadtrip experience centered around resource gathering, vehicular traversal, and navigating dynamic environments. Currently in active production as our next major playable release.
+- **Overview:** A survival-focused roadtrip experience centered around resource gathering, vehicular traversal, and navigating dynamic environments. Currently in active production as our next major playable release.
 
 ---
 
@@ -82,8 +82,8 @@ Our flagship project in development and a core showcase of the studio's technica
   <sub><i><b>[AI-Generated Concept Visualization]</b> — Possible prototype preview illustrating the miniature top-down camera perspective, law enactment UI, and autonomous city construction.</i></sub>
 </div>
 
-* **Concept Overview:** A macro-scale country and city-building simulation viewed from an elevated, miniature diorama perspective. Rather than micromanaging individual brick placements, players govern from above—enacting laws, setting economic policies, and watching their territory autonomously construct infrastructure and evolve in real time.
-* **Pipeline Placement:** Because the core loop relies primarily on systemic UI and modular simulation logic rather than heavy asset production, this project holds a flexible position in our queue and may be fast-tracked ahead of larger titles if prototyping proves lightweight.
+- **Concept Overview:** A macro-scale country and city-building simulation viewed from an elevated, miniature diorama perspective. Rather than micromanaging individual brick placements, players govern from above—enacting laws, setting economic policies, and watching their territory autonomously construct infrastructure and evolve in real time.
+- **Pipeline Placement:** Because the core loop relies primarily on systemic UI and modular simulation logic rather than heavy asset production, this project holds a flexible position in our queue and may be fast-tracked ahead of larger titles if prototyping proves lightweight.
 
 ---
 
@@ -125,13 +125,17 @@ Project visibility follows two tiers. Public projects receive full development l
 
 ## Join the Team
 
-We are open to hearing from developers, technical artists, and scripters who are interested in contributing as the studio grows.
+**Current Status:** `Closed / Open Network Roster`
 
-To apply, send an email to **[glzzjhn@gmail.com](mailto:glzzjhn@gmail.com)** with the subject line `Application: [Your Role]` and include:
+As of our current development phase, the studio is operating comfortably solo and does not actively require additional contributors. However, if our roadmap aligns with your interests, you are still welcome to submit an application to be kept on file for future phases.
 
-- A brief introduction and your area of expertise
-- Links to a portfolio, GitHub profile, or previous work
-- Your availability
+* **Compensation Model:** To minimize administrative overhead and ensure strict compliance with Roblox's Terms of Service, all collaborative roles operate on a **Project Revenue Share (Rev-Share)** basis distributed directly through native Roblox Group payouts.
+
+To express interest, send an email to **[glzzjhn@gmail.com](mailto:glzzjhn@gmail.com)** with the subject line `Application: [Your Role]` and include:
+
+- A brief introduction and your area of expertise (Scripting, Technical Art, 3D Modeling, UI, etc.)
+- Links to a portfolio, GitHub profile, or previous Roblox work
+- Your general availability
 
 ---
 
