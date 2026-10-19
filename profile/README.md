@@ -19,20 +19,41 @@ GlzzLexi Studios is an independent game studio founded and led by **Gabriel Rona
 
 The studio is currently solo-operated. Its stated objective is to grow into a small, specialized team of developers, technical artists, and scripters.
 
-## Games
+## Games & Projects
 
-Our first titles are in planning. Announcements and development logs will be published here as each project enters production.
+### Active Releases
+
+#### [STEAL AN ANOMALY: LAB BREACH TYCOON](https://www.roblox.com/games/134889225269060/STEAL-AN-ANOMALY-LAB-BREACH-TYCOON)
+* **Role:** Inaugural Studio Release / Lightweight Prototype
+* **Status:** Live (Evaluation Phase)
+* **Overview:** Serving as the studio's first official launch, this title was built with a minimalist, straightforward core loop to test baseline deployment and data handling. 
+* **Lifecycle Notice:** Paid promotion and feature expansions are under consideration but remain contingent on organic player retention. In alignment with our iterative development philosophy, active support will be sunsetted if the title does not meet internal player-engagement benchmarks over the coming months.
+
+---
+
+### Upcoming Pipeline
+
+Announcements and development logs will be published here as each project progresses through production.
+
+| Project Title | Genre / Inspiration | Status |
+| :--- | :--- | :--- |
+| **Untitled Zombie Roadtrip Game** | Survival / Co-op / Dynamic Environments | **In Development** |
+| **Untitled Anime Project** | RPG / Systems-Driven (*Tensura*-inspired) | **In Development (Delayed)** |
+
+### Target Genres & Architecture Focus
+
+Beyond our immediate pipeline, our modular framework is designed to support future titles across these core verticals:
 
 | Genre | Description | Status |
 | :--- | :--- | :--- |
 | Action | First-person shooters and tactical combat | Planned |
-| Survival | Resource gathering, crafting, and dynamic environments | Planned |
+| Survival | Resource gathering, crafting, and dynamic environments | In Active Pipeline |
 | Platforming | Obstacle courses, speed-runs, and physics-driven movement | Planned |
-| Systems-driven | RPGs, economy loops, progression, and social hubs | Planned |
+| Systems-driven | RPGs, economy loops, progression, and social hubs | In Active Pipeline |
 
 ### Development Approach
 
-We favor small, focused releases over a single large launch. This approach shortens delivery cycles, surfaces player feedback early, and allows each release to strengthen the shared codebase used by later titles.
+We favor small, focused releases over a single large launch. This approach shortens delivery cycles, surfaces player feedback early, and allows each release to strengthen the shared codebase used by later titles. Projects that validate their core loop receive long-term support, while underperforming prototypes are cleanly archived so resources remain focused on high-potential titles.
 
 ## Open Source
 
@@ -49,7 +70,7 @@ Contributions, issues, and feedback are welcome through each repository.
 | Phase | Objective | Status |
 | :--- | :--- | :--- |
 | 1. Foundation | Establish core modules and shared tooling in `studious-spoon` | In progress |
-| 2. First releases | Ship lightweight, playable prototypes and collect player feedback | Planned |
+| 2. First releases | Ship lightweight, playable prototypes and collect player feedback | **In progress** |
 | 3. Transparency | Publish project logs and architecture write-ups for public projects | Planned |
 | 4. Expansion | Grow the team and begin larger-scale titles | Planned |
 
