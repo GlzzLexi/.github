@@ -125,17 +125,17 @@ Project visibility follows two tiers. Public projects receive full development l
 
 ## Join the Team
 
-**Current Status:** `Closed / Open Network Roster`
+**Current Status:** `Selective Roster / Pipeline Network`
 
-As of our current development phase, the studio is operating comfortably solo and does not actively require additional contributors. However, if our roadmap aligns with your interests, you are still welcome to submit an application to be kept on file for future phases.
+GlzzLexi Studios operates as a lean, self-sufficient studio. While active recruitment is closed and core production is handled in-house, we maintain a private developer registry for high-impact collaborators as upcoming releases scale.
 
-* **Compensation Model:** To minimize administrative overhead and ensure strict compliance with Roblox's Terms of Service, all collaborative roles operate on a **Project Revenue Share (Rev-Share)** basis distributed directly through native Roblox Group payouts.
+* **Partnership & Revenue Model:** Collaboration is handled strictly through mutually agreed **Project Revenue Sharing (Rev-Share)**. Split percentages, delivery milestones, and payout structures are defined and agreed upon between both parties prior to project kickoff, ensuring total alignment, transparent accounting, and full compliance with Roblox Terms of Service via native Roblox Group payouts.
 
-To express interest, send an email to **[glzzjhn@gmail.com](mailto:glzzjhn@gmail.com)** with the subject line `Application: [Your Role]` and include:
+If you are a disciplined developer, technical artist, or 3D generalist interested in collaborating on future releases, submit your profile to **[glzzjhn@gmail.com](mailto:glzzjhn@gmail.com)** with the subject line `Application: [Your Role]`:
 
-- A brief introduction and your area of expertise (Scripting, Technical Art, 3D Modeling, UI, etc.)
-- Links to a portfolio, GitHub profile, or previous Roblox work
-- Your general availability
+- **Focus & Expertise:** Core disciplines (e.g., Modular Luau, Technical Art, UI/UX, Environment Design)
+- **Proof of Work:** Verified portfolio, GitHub profile, or active Roblox Creator Hub showcases
+- **Commitment:** Weekly availability and milestone turnaround capacity
 
 ---
 
