@@ -70,13 +70,30 @@ Our flagship project in development and a core showcase of the studio's technica
 
 ---
 
+### Future Concepts & R&D
+
+#### Untitled Nation & City-Builder Simulation
+**Genre:** Top-Down Strategy / Governance & Autonomous Simulation  
+**Status:** `Concept / Flexible Priority`
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/CityBuilderPrototype.jpg" alt="AI-Generated Concept Prototype - Miniature Top-Down Nation Builder" width="85%" />
+  <br />
+  <sub><i><b>[AI-Generated Concept Visualization]</b> — Possible prototype preview illustrating the miniature top-down camera perspective, law enactment UI, and autonomous city construction.</i></sub>
+</div>
+
+* **Concept Overview:** A macro-scale country and city-building simulation viewed from an elevated, miniature diorama perspective. Rather than micromanaging individual brick placements, players govern from above—enacting laws, setting economic policies, and watching their territory autonomously construct infrastructure and evolve in real time.
+* **Pipeline Placement:** Because the core loop relies primarily on systemic UI and modular simulation logic rather than heavy asset production, this project holds a flexible position in our queue and may be fast-tracked ahead of larger titles if prototyping proves lightweight.
+
+---
+
 ### Target Genres & Architecture Focus
 
 Beyond our immediate pipeline, our modular framework is designed to support titles across these core verticals:
 
 | Genre | Description | Status |
 | :--- | :--- | :--- |
-| **Systems-driven** | RPGs, economy loops, progression, and social hubs | **Featured / In Pipeline** |
+| **Systems-driven** | RPGs, economy loops, governance simulations, and progression | **Featured / In Pipeline** |
 | **Survival** | Resource gathering, crafting, and dynamic environments | **In Active Development** |
 | **Action** | First-person shooters and tactical combat | Planned |
 | **Platforming** | Obstacle courses, speed-runs, and physics-driven movement | Planned |
