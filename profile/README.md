@@ -5,17 +5,22 @@
 
   Independent Roblox studio specializing in modular Luau systems and incremental game releases.
 
+  [![Official Website](https://img.shields.io/badge/Official_Website-glzzlexi.me-ff758c.svg)](https://glzzlexi.me/)
   [![Status](https://img.shields.io/badge/Status-Active_Development-success.svg)](#)
   [![Platform](https://img.shields.io/badge/Platform-Roblox-00A2FF.svg)](https://create.roblox.com/)
   [![Language](https://img.shields.io/badge/Language-Luau-000000.svg)](https://luau.org/)
   [![License](https://img.shields.io/badge/Open_Source-MIT-blue.svg)](https://github.com/GlzzLexi/studious-spoon/blob/main/LICENSE)
+
+  <br />
+
+  👉 **[Visit Our Official Studio Website & Community Greenlight: glzzlexi.me](https://glzzlexi.me/)**
 </div>
 
 ---
 
 ## About
 
-GlzzLexi Studios is an independent game studio founded and led by **Gabriel Ronao**. The studio develops Roblox experiences on a shared foundation of reusable Luau modules covering data persistence, gameplay systems, and development tooling.
+GlzzLexi Studios is an independent game studio founded and led by **Gabriel Ronao**. The studio develops Roblox experiences on a shared foundation of reusable Luau modules covering data persistence, gameplay systems, and development tooling. Expanding into standalone 3D first-person desktop games distributed directly on our official studio website at **[glzzlexi.me](https://glzzlexi.me/)**.
 
 The studio is currently solo-operated. Its stated objective is to grow into a small, specialized team of developers, technical artists, and scripters.
 
@@ -140,5 +145,5 @@ If you are a disciplined developer, technical artist, or 3D generalist intereste
 ---
 
 <div align="center">
-  <sub>© 2026 GlzzLexi Studios. Founded by Gabriel Ronao.</sub>
+  <sub>© 2026 GlzzLexi Studios. Founded by Gabriel Ronao. &bull; <a href="https://glzzlexi.me/">glzzlexi.me</a></sub>
 </div>
