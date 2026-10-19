@@ -18,6 +18,16 @@
 
 ---
 
+<div align="center">
+  <a href="https://glzzlexi.me/">
+    <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/website-preview.jpg" alt="GlzzLexi Studios Official Website - glzzlexi.me" width="94%" />
+  </a>
+  <br />
+  <sub><i><b>[Live Official Studio Website]</b> — Standalone 3D Desktop Game Expansion & Community Greenlight Voting Booth (<a href="https://glzzlexi.me/">glzzlexi.me</a>)</i></sub>
+</div>
+
+---
+
 ## About
 
 GlzzLexi Studios is an independent game studio founded and led by **Gabriel Ronao**. The studio develops Roblox experiences on a shared foundation of reusable Luau modules covering data persistence, gameplay systems, and development tooling. Expanding into standalone 3D first-person desktop games distributed directly on our official studio website at **[glzzlexi.me](https://glzzlexi.me/)**.
