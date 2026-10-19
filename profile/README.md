@@ -30,9 +30,9 @@ The studio is currently solo-operated. Its stated objective is to grow into a sm
 Our flagship project in development and a core showcase of the studio's technical and creative vision. Inspired by *That Time I Got Reincarnated as a Slime (Tensura)*, this title focuses on deep progression mechanics, custom skill architectures, and immersive world-building built atop our modular Luau framework. While the timeline is currently extended to prioritize foundational studio systems and smaller milestone releases, it remains our premier passion project.
 
 <div align="center">
-  <img src="ANimegame.png" alt="Untitled Anime Project - Preview 1" width="32%" />
-  <img src="ANimegame2.png" alt="Untitled Anime Project - Preview 2" width="32%" />
-  <img src="ANimegame3.png" alt="Untitled Anime Project - Preview 3" width="32%" />
+  <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/ANimegame.png" alt="Untitled Anime Project - Preview 1" width="32%" />
+  <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/ANimegame2.png" alt="Untitled Anime Project - Preview 2" width="32%" />
+  <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/ANimegame3.png" alt="Untitled Anime Project - Preview 3" width="32%" />
 </div>
 
 ---
@@ -47,7 +47,7 @@ Our flagship project in development and a core showcase of the studio's technica
 
 <div align="center">
   <a href="https://www.roblox.com/games/134889225269060/STEAL-AN-ANOMALY-LAB-BREACH-TYCOON">
-    <img src="Screenshot%202026-10-18%20161940.png" alt="Steal an Anomaly: Lab Breach Tycoon" width="85%" />
+    <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/Screenshot%202026-10-18%20161940.png" alt="Steal an Anomaly: Lab Breach Tycoon" width="85%" />
   </a>
 </div>
 
@@ -63,7 +63,7 @@ Our flagship project in development and a core showcase of the studio's technica
 **Status:** `In Active Development`
 
 <div align="center">
-  <img src="ZombieGame.png" alt="Untitled Zombie Roadtrip Game" width="85%" />
+  <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/ZombieGame.png" alt="Untitled Zombie Roadtrip Game" width="85%" />
 </div>
 
 * **Overview:** A survival-focused roadtrip experience centered around resource gathering, vehicular traversal, and navigating dynamic environments. Currently in active production as our next major playable release.
