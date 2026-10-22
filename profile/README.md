@@ -74,14 +74,28 @@ Our flagship project in development and a core showcase of the studio's technica
 ### Upcoming Releases
 
 #### Untitled Zombie Roadtrip Game
-**Genre:** Survival / Co-op / Dynamic Environments  
-**Status:** `In Active Development`
+**Genre:** Survival / Co-op / Vehicular Traversal & Dynamic Environments  
+**Status:** `In Active Production (Sprint Update — October 2026)`
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/ZombieGame.png" alt="Untitled Zombie Roadtrip Game" width="85%" />
+  <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/ZombieGame.png" alt="Untitled Zombie Roadtrip Game Key Art" width="85%" />
 </div>
 
-- **Overview:** A survival-focused roadtrip experience centered around resource gathering, vehicular traversal, and navigating dynamic environments. Currently in active production as our next major playable release.
+<br />
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/Screenshot%202026-10-22%20124831.png" alt="Beginner Van Interior - Kitchen & Washing Station" width="32%" />
+  <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/Screenshot%202026-10-22%20124847.png" alt="Beginner Van Interior - Living Quarter & Bed Area" width="32%" />
+  <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/Screenshot%202026-10-22%20124912.png" alt="Beginner Van Interior - Mobile Computer Workstation" width="32%" />
+  <br />
+  <sub><i><b>[Latest Production Showcase]</b> — Fully functional interior of the starter "Living Van" (Beginner Van) featuring survival amenities: kitchenette, sanitation basin, onboard tactical terminal/PC, and resting bunk.</i></sub>
+</div>
+
+- **Overview:** A survival-driven roadtrip experience focused on expedition resource loops, procedural hazard traversal, and collaborative maintenance of a mobile sanctuary against encroaching infected hordes.
+- **Latest Production Milestones (Beginner Van):**
+  - **Mobile Living Hub:** Modeled and assembled the complete functional layout for the starter vehicle, transforming the chassis into an interactive safe zone.
+  - **Integrated Survival Modules:** Implemented discrete interactive zones inside the cabin, including a cooking station for meal preparation, a clean-water washing station, resting bunks for rest/energy recovery, and a desk-mounted computer terminal for road route navigation and communications.
+  - **Modular Attachment Hooks:** Configured interior nodes ready for future Luau-driven upgrades (power efficiency, defense barricades, and expanded storage).
 
 ---
 
@@ -144,7 +158,7 @@ Project visibility follows two tiers. Public projects receive full development l
 
 GlzzLexi Studios operates as a lean, self-sufficient studio. While active recruitment is closed and core production is handled in-house, we maintain a private developer registry for high-impact collaborators as upcoming releases scale.
 
-* **Partnership & Revenue Model:** Collaboration is handled strictly through mutually agreed **Project Revenue Sharing (Rev-Share)**. Split percentages, delivery milestones, and payout structures are defined and agreed upon between both parties prior to project kickoff, ensuring total alignment, transparent accounting, and full compliance with Roblox Terms of Service via native Roblox Group payouts.
+- **Partnership & Revenue Model:** Collaboration is handled strictly through mutually agreed **Project Revenue Sharing (Rev-Share)**. Split percentages, delivery milestones, and payout structures are defined and agreed upon between both parties prior to project kickoff, ensuring total alignment, transparent accounting, and full compliance with Roblox Terms of Service via native Roblox Group payouts.
 
 If you are a disciplined developer, technical artist, or 3D generalist interested in collaborating on future releases, submit your profile to **[glzzjhn@gmail.com](mailto:glzzjhn@gmail.com)** with the subject line `Application: [Your Role]`:
 
