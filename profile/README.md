@@ -73,9 +73,24 @@ Our flagship project in development and a core showcase of the studio's technica
 
 ### Upcoming Releases
 
+#### Untitled Nation & City-Builder Simulation
+**Genre:** Top-Down Strategy / Governance & Autonomous Simulation  
+**Status:** `In Active Production (Top Priority — Fast-Tracked Sprint)`
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/CityBuilderPrototype.jpg" alt="AI-Generated Concept Prototype - Miniature Top-Down Nation Builder" width="85%" />
+  <br />
+  <sub><i><b>[Visual Concept & UI Prototype]</b> — Miniature top-down perspective preview illustrating macro-management, policy enactment, and autonomous territory evolution.</i></sub>
+</div>
+
+- **Concept Overview:** A macro-scale country and city-building simulation viewed from an elevated, miniature diorama perspective. Rather than micromanaging individual brick placements, players govern from above—enacting laws, setting economic policies, and watching their territory autonomously construct infrastructure and evolve in real time.
+- **Priority Escalation:** **Fast-tracked into primary production.** Because the core mechanics depend heavily on systemic UI logic, state management, and algorithmic simulation rather than massive art asset overhead, this project directly exercises our modular Luau framework (`studious-spoon`) and represents our most efficient path to a high-depth release.
+
+---
+
 #### Untitled Zombie Roadtrip Game
 **Genre:** Survival / Co-op / Vehicular Traversal & Dynamic Environments  
-**Status:** `In Active Production (Sprint Update — October 2026)`
+**Status:** `In Development (Delayed / Rescheduled)`
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/ZombieGame.png" alt="Untitled Zombie Roadtrip Game Key Art" width="85%" />
@@ -88,31 +103,14 @@ Our flagship project in development and a core showcase of the studio's technica
   <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/Screenshot%202026-10-22%20124847.png" alt="Beginner Van Interior - Living Quarter & Bed Area" width="32%" />
   <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/Screenshot%202026-10-22%20124912.png" alt="Beginner Van Interior - Mobile Computer Workstation" width="32%" />
   <br />
-  <sub><i><b>[Latest Production Showcase]</b> — Fully functional interior of the starter "Living Van" (Beginner Van) featuring survival amenities: kitchenette, sanitation basin, onboard tactical terminal/PC, and resting bunk.</i></sub>
+  <sub><i><b>[Completed Production Asset]</b> — Fully functional interior of the starter "Living Van" (Beginner Van) featuring survival amenities: kitchenette, sanitation basin, onboard tactical terminal/PC, and resting bunk.</i></sub>
 </div>
 
 - **Overview:** A survival-driven roadtrip experience focused on expedition resource loops, procedural hazard traversal, and collaborative maintenance of a mobile sanctuary against encroaching infected hordes.
-- **Latest Production Milestones (Beginner Van):**
-  - **Mobile Living Hub:** Modeled and assembled the complete functional layout for the starter vehicle, transforming the chassis into an interactive safe zone.
-  - **Integrated Survival Modules:** Implemented discrete interactive zones inside the cabin, including a cooking station for meal preparation, a clean-water washing station, resting bunks for rest/energy recovery, and a desk-mounted computer terminal for road route navigation and communications.
-  - **Modular Attachment Hooks:** Configured interior nodes ready for future Luau-driven upgrades (power efficiency, defense barricades, and expanded storage).
-
----
-
-### Future Concepts & R&D
-
-#### Untitled Nation & City-Builder Simulation
-**Genre:** Top-Down Strategy / Governance & Autonomous Simulation  
-**Status:** `Concept / Flexible Priority`
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/CityBuilderPrototype.jpg" alt="AI-Generated Concept Prototype - Miniature Top-Down Nation Builder" width="85%" />
-  <br />
-  <sub><i><b>[AI-Generated Concept Visualization]</b> — Possible prototype preview illustrating the miniature top-down camera perspective, law enactment UI, and autonomous city construction.</i></sub>
-</div>
-
-- **Concept Overview:** A macro-scale country and city-building simulation viewed from an elevated, miniature diorama perspective. Rather than micromanaging individual brick placements, players govern from above—enacting laws, setting economic policies, and watching their territory autonomously construct infrastructure and evolve in real time.
-- **Pipeline Placement:** Because the core loop relies primarily on systemic UI and modular simulation logic rather than heavy asset production, this project holds a flexible position in our queue and may be fast-tracked ahead of larger titles if prototyping proves lightweight.
+- **Production Status & Delay Notice:** Active development is temporarily **delayed / placed on hold**. While core vehicle modeling, interior modules, and interactive sub-assemblies (Beginner Van) are functionally complete, open-world procedural pathing and zombie AI pipelines require substantial asset bandwidth. Production has been rescheduled to prioritize the fast-tracked simulation title.
+- **Completed Milestones:**
+  - **Mobile Living Hub:** Fully assembled modular chassis with interactive kitchen, water sanitation, bunk recovery, and navigation terminal.
+  - **Component Attachments:** Interior nodes established and ready for Luau wiring upon production resumption.
 
 ---
 
@@ -122,8 +120,8 @@ Beyond our immediate pipeline, our modular framework is designed to support titl
 
 | Genre | Description | Status |
 | :--- | :--- | :--- |
-| **Systems-driven** | RPGs, economy loops, governance simulations, and progression | **Featured / In Pipeline** |
-| **Survival** | Resource gathering, crafting, and dynamic environments | **In Active Development** |
+| **Systems-driven** | RPGs, economy loops, governance simulations, and progression | **Primary Focus / Active Production** |
+| **Survival** | Resource gathering, crafting, and dynamic environments | Delayed / On Hold |
 | **Action** | First-person shooters and tactical combat | Planned |
 | **Platforming** | Obstacle courses, speed-runs, and physics-driven movement | Planned |
 
