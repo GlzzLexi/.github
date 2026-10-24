@@ -12,8 +12,11 @@
   [![License](https://img.shields.io/badge/Open_Source-MIT-blue.svg)](https://github.com/GlzzLexi/studious-spoon/blob/main/LICENSE)
 
   <br />
-
+  <!-- SHOWCASE:START -->
+  
   <img src="https://raw.githubusercontent.com/GlzzLexi/.github/main/showcase.gif" alt="GlzzLexi Studios - Active Project Showcase" width="100%" />
+    
+  <!-- SHOWCASE:END -->
 
   <br /><br />
 
