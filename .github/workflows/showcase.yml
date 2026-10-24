@@ -18,6 +18,11 @@ permissions:
   contents: write   # commit the generated GIF
   models: read      # lets GITHUB_TOKEN call GitHub Models (free gpt-4o-mini)
 
+# Never run two builds at once (avoids push conflicts)
+concurrency:
+  group: showcase-gif
+  cancel-in-progress: false
+
 jobs:
   build-showcase-gif:
     runs-on: ubuntu-latest
@@ -40,17 +45,16 @@ jobs:
           BRANCH: ${{ github.ref_name }}
         run: python .github/scripts/generate_showcase.py
 
-      - name: Commit and push GIF
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          for f in showcase.gif profile/showcase.gif .github/profile/showcase.gif; do
-            [ -f "$f" ] && git add "$f" || true
-          done
+          # -A also stages deleted (old) GIFs and the updated README link
+          git add -A
 
           if git diff --cached --quiet; then
-            echo "Showcase GIF unchanged. Nothing to push."
+            echo "Nothing changed. Nothing to push."
           else
             git commit -m "chore(showcase): update project showcase gif [skip ci]"
             git pull --rebase origin "${{ github.ref_name }}"
