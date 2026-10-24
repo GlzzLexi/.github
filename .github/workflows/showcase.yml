@@ -1,0 +1,58 @@
+name: Generate Studio Showcase GIF
+
+on:
+  schedule:
+    # 09:00 AM PHT = 01:00 UTC
+    - cron: '0 1 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - 'profile/README.md'
+      - '.github/profile/README.md'
+      - 'README.md'
+      - '.github/scripts/generate_showcase.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # commit the generated GIF
+  models: read      # lets GITHUB_TOKEN call GitHub Models (free gpt-4o-mini)
+
+jobs:
+  build-showcase-gif:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pillow requests
+
+      - name: Build showcase GIF
+        env:
+          AI_TOKEN: ${{ secrets.AI_TOKEN || secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ github.ref_name }}
+        run: python .github/scripts/generate_showcase.py
+
+      - name: Commit and push GIF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          for f in showcase.gif profile/showcase.gif .github/profile/showcase.gif; do
+            [ -f "$f" ] && git add "$f" || true
+          done
+
+          if git diff --cached --quiet; then
+            echo "Showcase GIF unchanged. Nothing to push."
+          else
+            git commit -m "chore(showcase): update project showcase gif [skip ci]"
+            git pull --rebase origin "${{ github.ref_name }}"
+            git push origin "HEAD:${{ github.ref_name }}"
+          fi
