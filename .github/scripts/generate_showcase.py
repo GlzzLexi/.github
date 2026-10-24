@@ -4,11 +4,16 @@ Builds showcase.gif from the studio README.
 1. Finds the README and extracts every game/project (AI first, regex fallback).
 2. Loads each project's preview image (local file first, then raw GitHub URL).
 3. Renders a splash slide + one card per project and saves an animated GIF.
+4. Names the GIF by content hash (showcase-<hash>.gif) so GitHub's image cache
+   always fetches the new version, deletes older versions, and updates the
+   image link in the README.
 """
+import hashlib
 import json
 import os
 import re
 import shutil
+import tempfile
 from io import BytesIO
 
 import requests
@@ -40,9 +45,18 @@ if not readme_path:
     raise SystemExit(1)
 
 readme_dir = os.path.dirname(readme_path)
+out_dir = os.path.join(readme_dir, "showcase")
+cache_path = os.path.join(out_dir, "projects-cache.json")
 with open(readme_path, "r", encoding="utf-8") as f:
     readme_text = f.read()
 print(f"Using README: {readme_path}")
+
+# Matches any reference to our GIF: showcase.gif, showcase-1a2b3c4d.gif,
+# with or without a folder / URL in front and a ?query behind.
+GIF_REF = re.compile(
+    r"(?<![\w.:/\-@%])(?:[\w.:/\-@%]*/)?showcase(?:-[0-9a-f]{8})?\.gif(?:\?[\w=&.\-]*)?"
+)
+GIF_NAME = re.compile(r"^showcase-[0-9a-f]{8}\.gif$")
 
 
 # --------------------------------------------------------------------------
@@ -64,6 +78,8 @@ def extract_image(section):
     for m in re.finditer(pattern, section):
         url = m.group(1) or m.group(2)
         low = url.lower().split("?")[0]
+        if GIF_REF.search(low):
+            continue
         if "shields.io" in url.lower() or "badge" in low or low.endswith(".svg"):
             continue
         return url
@@ -172,10 +188,33 @@ def ai_parser(text, token):
         return None
 
 
-regex_projects = regex_parser(readme_text)
-projects = ai_parser(readme_text, TOKEN)
+# Fingerprint ignores our own GIF link, so updating the link never invalidates the cache.
+fingerprint = hashlib.sha256(GIF_REF.sub("SHOWCASE", readme_text).encode()).hexdigest()
 
-if projects:
+
+def read_cache():
+    try:
+        with open(cache_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if data.get("fingerprint") == fingerprint and data.get("projects"):
+            return data["projects"]
+    except Exception:
+        pass
+    return None
+
+
+regex_projects = regex_parser(readme_text)
+projects = read_cache()
+from_cache = bool(projects)
+if from_cache:
+    print("README unchanged since last run: reusing cached AI results.")
+else:
+    projects = ai_parser(readme_text, TOKEN)
+ai_succeeded = bool(projects) and not from_cache
+
+if from_cache:
+    pass  # cached projects were already cleaned and merged
+elif projects:
     # Never trust AI image URLs: keep only ones that really exist in the README,
     # otherwise borrow the image the regex parser found for the same project.
     for p in projects:
@@ -198,6 +237,11 @@ else:
 if not projects:
     print("::error::Could not extract any projects from the README.")
     raise SystemExit(1)
+
+if ai_succeeded:
+    os.makedirs(out_dir, exist_ok=True)
+    with open(cache_path, "w", encoding="utf-8") as f:
+        json.dump({"fingerprint": fingerprint, "projects": projects}, f, indent=2)
 
 projects = projects[:MAX_PROJECTS]
 print("Projects:", ", ".join(p["title"] for p in projects))
@@ -394,12 +438,14 @@ for i, proj in enumerate(projects, start=1):
     frames.append(card)
 
 # --------------------------------------------------------------------------
-# 5. Save GIF (adaptive palette per frame keeps screenshots from banding)
+# 5. Save GIF under a content-hash name (beats GitHub's image cache)
 # --------------------------------------------------------------------------
 pal = [f.convert("P", palette=Image.ADAPTIVE, colors=256) for f in frames]
 durations = [3000] + [3500] * (len(pal) - 1)
+
+tmp_gif = os.path.join(tempfile.mkdtemp(), "showcase.gif")
 pal[0].save(
-    "showcase.gif",
+    tmp_gif,
     save_all=True,
     append_images=pal[1:],
     duration=durations,
@@ -407,9 +453,69 @@ pal[0].save(
     disposal=2,
 )
 
-for folder in ("profile", ".github/profile"):
-    if os.path.isdir(folder):
-        shutil.copy("showcase.gif", os.path.join(folder, "showcase.gif"))
+with open(tmp_gif, "rb") as f:
+    digest = hashlib.sha256(f.read()).hexdigest()[:8]
 
-size_kb = os.path.getsize("showcase.gif") / 1024
-print(f"Generated showcase.gif ({len(frames)} frames, {size_kb:.0f} KB)")
+gif_name = f"showcase-{digest}.gif"
+os.makedirs(out_dir, exist_ok=True)
+gif_path = os.path.join(out_dir, gif_name).replace(os.sep, "/")
+shutil.copy(tmp_gif, gif_path)
+print(f"Generated {gif_path} ({len(frames)} frames, {os.path.getsize(gif_path) / 1024:.0f} KB)")
+
+# ---- Cleaner: remove every older showcase GIF ----
+for fname in os.listdir(out_dir):
+    if GIF_NAME.match(fname) and fname != gif_name:
+        os.remove(os.path.join(out_dir, fname))
+        print(f"Cleaned up old file: {fname}")
+
+for legacy in ("showcase.gif", "profile/showcase.gif", ".github/profile/showcase.gif"):
+    if os.path.isfile(legacy):
+        os.remove(legacy)
+        print(f"Cleaned up legacy file: {legacy}")
+
+
+# ---- Point the README at the new file ----
+def public_url(path):
+    if REPO:
+        return f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/{path}"
+    return os.path.relpath(path, readme_dir or ".").replace(os.sep, "/")
+
+
+def update_readme(new_url):
+    with open(readme_path, "r", encoding="utf-8") as f:
+        text = f.read()
+
+    mine = 0
+
+    def swap(m):
+        nonlocal mine
+        tok = m.group(0)
+        # Leave links that clearly point at some other repo alone
+        if "://" in tok and REPO and REPO.lower() not in tok.lower():
+            return tok
+        mine += 1
+        return new_url
+
+    new_text, _ = GIF_REF.subn(swap, text)
+    n = mine
+
+    if n == 0:
+        marker = re.compile(r"(<!--\s*SHOWCASE:START\s*-->)(.*?)(<!--\s*SHOWCASE:END\s*-->)", re.S)
+        if marker.search(new_text):
+            block = f'\n<img src="{new_url}" alt="{STUDIO_NAME.title()} showcase" width="100%">\n'
+            new_text = marker.sub(lambda m: m.group(1) + block + m.group(3), new_text)
+            n = 1
+
+    if n == 0:
+        print("::warning::No showcase link found in the README. Add this where you want the GIF:")
+        print(f'  <!-- SHOWCASE:START -->\n  <!-- SHOWCASE:END -->')
+        return
+    if new_text != text:
+        with open(readme_path, "w", encoding="utf-8") as f:
+            f.write(new_text)
+        print(f"README updated to point at {gif_name}")
+    else:
+        print("README already points at the latest GIF.")
+
+
+update_readme(public_url(gif_path))
