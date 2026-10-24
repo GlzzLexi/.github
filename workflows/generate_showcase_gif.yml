@@ -1,6 +1,9 @@
 name: Generate Studio Showcase GIF
 
 on:
+  schedule:
+    # 01:00 UTC = 09:00 AM Philippine Standard Time (PHT / UTC+8)
+    - cron: '0 1 * * *'
   push:
     paths:
       - 'profile/README.md'
@@ -45,9 +48,6 @@ jobs:
           from io import BytesIO
           from PIL import Image, ImageDraw, ImageFont
 
-          # ---------------------------------------------------------
-          # 1. DYNAMICALLY RESOLVE ORG PROFILE README
-          # ---------------------------------------------------------
           CANDIDATES = [
               "profile/README.md",
               ".github/profile/README.md",
@@ -61,24 +61,21 @@ jobs:
                   break
 
           if not readme_path:
-              print(f"::error::Could not locate profile README in any expected directory: {CANDIDATES}")
+              print(f"::error::Could not locate README in: {CANDIDATES}")
               exit(1)
 
           target_dir = os.path.dirname(readme_path)
           output_gif = os.path.join(target_dir, "showcase.gif") if target_dir else "showcase.gif"
           root_gif = "showcase.gif"
 
-          print(f"Discovered Org README at: {readme_path}")
-          print(f"Target GIF destination: {output_gif}")
+          print(f"Reading README from: {readme_path}")
+          print(f"Target GIF: {output_gif}")
 
           with open(readme_path, "r", encoding="utf-8") as f:
               readme_text = f.read()
 
           GITHUB_TOKEN = os.environ.get("GH_TOKEN", "")
 
-          # ---------------------------------------------------------
-          # 2. EXTRACT PROJECTS VIA GITHUB MODELS AI (WITH FALLBACK)
-          # ---------------------------------------------------------
           def extract_via_ai(text, token):
               url = "https://models.inference.ai.azure.com/chat/completions"
               headers = {
@@ -91,11 +88,9 @@ jobs:
                       {
                           "role": "system",
                           "content": (
-                              "You are an automated game studio analyzer. Analyze the provided README markdown "
-                              "and extract all distinct games/projects (active, upcoming, or prototypes). "
-                              "Return ONLY a JSON object with key 'projects' containing an array of objects with: "
-                              "'title' (string), 'status' (string), 'genre' (string), 'image_url' (first valid image URL found in that project section, or null), "
-                              "and 'tagline' (one punchy sentence summary)."
+                              "Extract all distinct games/projects from this README. "
+                              "Return ONLY a JSON object with key 'projects' containing an array of: "
+                              "'title', 'status', 'genre', 'image_url', and 'tagline'."
                           )
                       },
                       {"role": "user", "content": text}
@@ -110,7 +105,7 @@ jobs:
                       content = data["choices"][0]["message"]["content"]
                       return json.loads(content).get("projects", [])
               except Exception as e:
-                  print(f"AI API unavailable ({e}), engaging fallback AST parser...")
+                  print(f"AI parser skipped ({e}), falling back to regex parser...")
               return None
 
           def extract_via_fallback(text):
@@ -158,14 +153,11 @@ jobs:
           if not projects:
               projects = extract_via_fallback(readme_text)
 
-          print(f"Successfully loaded {len(projects)} projects.")
+          print(f"Found {len(projects)} projects.")
           if not projects:
-              print("No projects detected to render. Exiting.")
+              print("No projects found to render. Exiting.")
               exit(0)
 
-          # ---------------------------------------------------------
-          # 3. DRAWING & COMPOSITION (16:9 800x450 Canvas)
-          # ---------------------------------------------------------
           WIDTH, HEIGHT = 800, 450
           frames = []
 
@@ -194,7 +186,7 @@ jobs:
                   return (231, 76, 60)
               return (241, 196, 15)
 
-          # Slide 1: Studio Splash Intro
+          # Frame 1: Splash Slide
           intro = Image.new("RGB", (WIDTH, HEIGHT), color=(15, 18, 24))
           draw_intro = ImageDraw.Draw(intro)
           draw_intro.rectangle([(0, 0), (WIDTH, 4)], fill=(255, 117, 140))
@@ -205,7 +197,7 @@ jobs:
           draw_intro.text((WIDTH//2, 327), "glzzlexi.me", fill=(255, 255, 255), font=get_font(14, bold=True), anchor="mm")
           frames.append(intro)
 
-          # Slides 2..N: Dynamic Project Cards
+          # Frame 2..N: Project Cards
           for proj in projects:
               card = Image.new("RGB", (WIDTH, HEIGHT), color=(18, 22, 30))
               draw = ImageDraw.Draw(card)
@@ -268,9 +260,6 @@ jobs:
 
               frames.append(card)
 
-          # ---------------------------------------------------------
-          # 4. SAVE COMPILATION & MIRROR TO ROOT
-          # ---------------------------------------------------------
           frames[0].save(
               output_gif,
               save_all=True,
@@ -281,6 +270,22 @@ jobs:
           )
           print(f"Generated primary: {output_gif}")
 
-          # Also write a copy to the root so either link path works
           if output_gif != root_gif:
-              shutil.copy(output_gif, root_gif
+              shutil.copy(output_gif, root_gif)
+              print(f"Mirrored copy to: {root_gif}")
+          EOF
+          python generate_gif.py
+
+      - name: Commit and Push Generated Showcase GIF
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add showcase.gif profile/showcase.gif .github/profile/showcase.gif 2>/dev/null || true
+          
+          if git diff --staged --name-only | grep -q 'showcase.gif'; then
+            git commit -m "chore(showcase): auto-generate updated project showcase gif [skip ci]"
+            git push origin main
+          else
+            echo "Showcase GIF has not changed. Skipping push."
+          fi
